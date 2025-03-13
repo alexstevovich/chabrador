@@ -1,7 +1,7 @@
 {
     "name": "chabrador",
     "version": "1.0.2",
-    "description": "A key-incrementer database stored in memory.",
+    "description": "Chabrador is a key-incrementer database with persistent memory across process resets.",
     "exports": {
         "import": "./src/index.js",
         "require": "./gen/index.cjs"
