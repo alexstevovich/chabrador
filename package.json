@@ -1,0 +1,63 @@
+{
+    "name": "chabrador",
+    "version": "1.0.2",
+    "description": "A key-incrementer database stored in memory.",
+    "exports": {
+        "import": "./src/index.js",
+        "require": "./gen/index.cjs"
+    },
+    "type": "module",
+    "types": "index.d.ts",
+    "files": [
+        "./src/",
+        "./gen"
+    ],
+    "main": "./gen/index.cjs",
+    "scripts": {
+        "test": "vitest",
+        "tsify": "npx tsc --declaration --emitDeclarationOnly --outFile index.d.ts",
+        "preamble": "preamble --apply --dir ./src/",
+        "zord": "filezord --zord --dir ./ --id pkg:chabrador",
+        "pretty": "npx prettier --write .",
+        "lint": "eslint ./src/",
+        "lint:fix": "eslint --fix ./src/",
+        "build": "npm run preamble && npm run pretty && npm run lint:fix && node build.js && preamble --apply --dir ./gen/  && npm run zord"
+    },
+    "license": "Apache-2.0",
+    "author": {
+        "name": "Alex Stevovich",
+        "email": "alex.stevovich@gmail.com",
+        "url": "https://alexstevovich.com"
+    },
+    "keywords": [
+        "logging",
+        "key-value-store",
+        "persistence",
+        "data-storage",
+        "json-logging",
+        "memory-management",
+        "event-logger",
+        "status-monitor",
+        "error-handling",
+        "performance-monitoring",
+        "lightweight",
+        "node",
+        "async",
+        "filesystem",
+        "developer-tools",
+        "console-logger"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/alexstevovich/chabrador.git"
+    },
+    "devDependencies": {
+        "@eslint/js": "^9.22.0",
+        "eslint": "^9.21.0",
+        "eslint-plugin-prettier": "^5.2.3",
+        "markdownlint": "^0.37.4",
+        "markdownlint-cli": "^0.44.0",
+        "prettier": "^3.5.3",
+        "vitest": "^3.0.8"
+    }
+}
